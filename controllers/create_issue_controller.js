@@ -1,3 +1,4 @@
+/*Issue creation page is rendered using this controller*/
 const Project=require('../models/project');
 module.exports.createIssueView=async function(req,res){
     let pID=req.query.id;
