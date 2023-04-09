@@ -1,7 +1,8 @@
+/*home page is rendered and search queries on home is done using this controler*/
 const Project = require('../models/project');
 module.exports.home = function (req, res) {
 
-
+    /*for ajax request*/
     if (req.xhr) {
         Project.find({}).then(function (list) {
             return res.status(200).json({
@@ -12,7 +13,7 @@ module.exports.home = function (req, res) {
             })
         })
     }
-
+    /*home page renderer*/
     else {
         Project.find({}).then(function (list) {
 
