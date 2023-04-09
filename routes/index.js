@@ -1,10 +1,11 @@
+/*entry router file*/
 const express=require('express');
 const router=express.Router();
 const home_controller=require('../controllers/home_controller');
 const create_project_controller=require('../controllers/create_project_controller');
 const create_project=require('../controllers/create_project');
 
-
+/*get request is used to load the page whilst post is for ajax query requests */
 router.get('/',home_controller.home);
 router.post('/',home_controller.home);
 
