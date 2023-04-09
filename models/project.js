@@ -1,3 +1,4 @@
+/*Project Schema which contains Labels from various different Issues to get a brief understandig of issues related to project*/
 const mongoose=require('mongoose');
 
 const projectSchema = new mongoose.Schema({
