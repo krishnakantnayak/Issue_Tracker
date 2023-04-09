@@ -1,3 +1,4 @@
+/*Project creation in db controller*/
 const Project=require('../models/project');
 
 module.exports.createProject=async function(req,res){
