@@ -1,3 +1,4 @@
+/*this router js is linked to index router file for project detailed view and isssue creations and queries*/
 const express=require('express');
 const router=express.Router();
 
