@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+/*body parser required to get reeq body from client*/
 var bodyParser = require('body-parser')
 const port = 8000;
 const mongoose=require('./config/mongoose');
