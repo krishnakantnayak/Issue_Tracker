@@ -1,8 +1,10 @@
+/*Project detailed view isrendered and queries fetched using this cotroller*/
 const Project = require('../models/project');
 const Issue = require('../models/issues');
 module.exports.showProject = function (req, res) {
 
     let id = req.query.id;
+    /*for ajax request*/
     if (req.xhr) {
         Issue.find({}).then(function(issuesList){
             return res.status(200).json({
@@ -11,6 +13,7 @@ module.exports.showProject = function (req, res) {
             })
         })
     }
+    /*render page*/
     else {
         Project.findById(id).then(function (pobj) {
 
