@@ -1,3 +1,4 @@
+/*Schema model for Issues which will use Project ID as a field to map with respective projects*/
 const mongoose=require('mongoose');
 
 const issueSchema=new mongoose.Schema({
