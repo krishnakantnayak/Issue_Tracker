@@ -1,0 +1,54 @@
+#main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 640px;
+    padding-left: 28%;
+}
+input[type='text']{
+    border-radius: 10px;
+}
+::placeholder{
+    text-align: center;
+}
+button{
+    border-radius: 10px;
+    background-color: inherit;
+    cursor: pointer;
+}
+#projects_list{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    
+}
+.labels{
+    border: 0;
+    background-color: cyan;
+    margin: 0 2px 0 2px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#create-project{
+    border: 3px solid grey;
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+}
+
+ul{
+    list-style: none;
+}
+.pro-name{
+    color: orange;
+}
+ul>li:hover{
+    /* border: .5px solid blue; */
+    padding: 0 2px 0 2px;
+    margin: none;
+    transition: 1s;
+}
+

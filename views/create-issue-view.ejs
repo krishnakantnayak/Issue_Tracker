@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>
+        <%=title%>
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <form action="/show-project/create-issue-page/create-issue" method="POST">
+        <input type="hidden" value="<%=pID%>" name="projectID" />
+        <input type="text" name="name" placeholder="Input Issue Title">
+        <input type="text" name="description" placeholder="Description">
+        <input type="text" name="author" placeholder="Author">
+        <div type="text" name="labels_holder" id="labels_holder"
+            style="border:1px solid black; border-radius: 5px; background-color:yellow ;width:5% ;text-align: center;">
+            Labels</div>
+        <div id="labels_list">
+            <%for(i of project['Label']){%>
+                <%if(i!=null)%>
+                    <input type="checkbox" name="labels" id=<%=i%> value=<%=i%> ><%=i%>
+             <%}%>
+            <input type="text" id="new_label_add" placeholder="Enter a new Label">
+            <button id="new_label_add_btn"type="button">+</button>
+
+        </div>
+        <Button type="submit">Submit</Button>
+    </form>
+
+</body>
+<script src="/js/create_issue_view.js"></script>
+
+</html>

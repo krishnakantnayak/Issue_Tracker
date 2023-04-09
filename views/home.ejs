@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>
+        <%=title%>
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" href="/css/home.css">
+<body>
+
+    <div id="main-container">
+        <h1>HomePage</h1>
+        <form action="/" method="post" id="search-form">
+            <input type="text" id="searchName" placeholder="search by Project Title" name="Name">
+            <input type="text" id="searchAuthor" placeholder="search by Author" name="Author">
+            <button type="submit">search</button>
+        </form>
+
+        <a href="create-project-page" id="create-project">Create a new Project</a>
+        <ul id="projects_list">
+            <%for(let i of projectlist){%>
+                <li>
+                    <a href="/show-project/?id=<%= i['_id']%>">
+                        <span class="pro-name">
+                            <%=i["Name"]%> 
+                        </span>by
+                        <span>
+                            <%=i["Author"]%>
+                        </span>
+
+                        <%for(j of i['Label']){%>
+                            <span class="labels">
+                                <%=j%>
+                            </span>
+                        <%}%>
+
+                    </a>
+                </li>
+                <%}%>
+        </ul>
+    </div>
+
+</body>
+
+
+<script src="js/home.js"></script>
+
+</html>

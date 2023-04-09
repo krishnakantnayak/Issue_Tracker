@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" href="/css/project-detail-view.css">
+
+<body>
+    <h1>Project Detailed Information</h1>
+    <form action="/show-project" method="post" id="search-form">
+        <input type="hidden" value=<%=project._id%>>
+
+        <input type="text" id="searchName" placeholder="search by Title or description" name="Name">
+        <input type="text" id="searchAuthor" placeholder="search by Author" name="Author">
+        <span id="labels_list" style="height: 3%; width: 3%; background-color: aquamarine; ">
+            <%for(i of project['Label']){%>
+
+                <input type="checkbox" name="labels" id=<%=i%> value='<%=i%>' ><%=i%>
+                        <%}%>
+        </span>
+        <button type="submit">search</button>
+    </form>
+    <a href="/show-project/create-issue-page/?id=<%=project._id%>" id="create-issue">Create a new
+        Issue</a>
+    <div id="main-container">
+
+        <div id="pro-dets">
+            Name: <%= project.Name %> <br>
+                Author: <%= project.Author %> <br>
+                    Description:
+                    <div id="description">
+                        <%= project.Description %>
+                    </div>
+
+                    
+        </div>
+
+        <div id="issue-list">
+            <ul id="issuelist">
+                <%for(let i of issuesList){%>
+                    <li>
+                        <div class="issue-card">
+                            <span>Issue Name: <%=i.Title%> <br> Author: <%=i.Author%> </span> <br>
+                            IssueLabels: <%=i.Labels%> <br>
+                            Description: <%=i['Description']%>
+                        </div>
+                    </li>
+                    <%}%>
+            </ul>
+        </div>
+
+
+    </div>
+
+</body>
+<script type="text/javascript" src="/js/project-details-view.js">
+
+</script>
+
+</html>
