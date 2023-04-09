@@ -1,6 +1,6 @@
 const Issue=require('../models/issues');
 const Project=require('../models/project');
-
+/*create a issue in DB done through this controller*/
 module.exports.createIssue=async function(req,res){
     // let pID=req.query.id;
     console.log(req.body);
