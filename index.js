@@ -1,3 +1,4 @@
+/*Entry point of application*/
 const express=require('express');
 const app=express();
 /*body parser required to get reeq body from client*/
